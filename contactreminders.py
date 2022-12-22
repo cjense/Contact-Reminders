@@ -17,17 +17,17 @@ class Contact:
 
     def __str__(self):
         if self.nickname and self.type == 'family':
-            return f"{self.nickname} is a {self.type} member and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.nickname} is a {self.type} member and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
         elif self.nickname and self.type == 'friend':
-            return f"{self.nickname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.nickname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
         elif not self.nickname and self.type == 'family':
-            return f"{self.fullname} is a {self.type} member and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.fullname} is a {self.type} member and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
         elif not self.nickname and self.type == 'friend':
-            return f"{self.fullname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.fullname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
         elif self.type == 'network':
-            return f"{self.fullname} is in your {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.fullname} is in your {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
         else:
-            return f"{self.fullname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue."
+            return f"{self.fullname} is a {self.type} and should be contacted every {self.frequency} days. Last contacted on {self.lastcontacted} and next contact should be on {self.reachout}. You are {self.overdue} days overdue.\n"
 
 
 def main():
