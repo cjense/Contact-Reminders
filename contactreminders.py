@@ -39,6 +39,8 @@ def main():
         updatecontact(sys.argv[2], sys.argv[3])
     elif len(sys.argv) > 1 and sys.argv[1] == "add":
         addcontact()
+    elif len(sys.argv) > 1 and sys.argv[1] == "shortlist":
+        shortlist()
     else:
         contactlist()
 
@@ -146,6 +148,13 @@ def updatecontact(firstname, lastname, lastcontacted=datetime.today().date()):
             print("Updated contact: " + c.fullname + ". Next reachout is " + c.reachout.strftime("%Y-%m-%d") + ".")
 
     updatecsv(contacts, csvfile)
+
+def shortlist():
+    contacts = readcsv(csvfile)
+
+    for contact in contacts:
+        if datetime.today().date() >= contact.reachout:
+            print(contact.fullname + "\n")
 
 if __name__ == "__main__":
     main()
