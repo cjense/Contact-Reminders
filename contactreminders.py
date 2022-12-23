@@ -121,10 +121,12 @@ def addcontact():
         print("Invalid date. Please try again.")
         return
 
-    reachout = datetime.strptime(lastcontacted, "%Y-%m-%d").date() + timedelta(days=int(frequency))
+    reachout = lastcontacted + timedelta(days=int(frequency))
+    lastcontacted = str(lastcontacted)
     nickname = input("Enter a nickname for the contact (optional): ")
 
     contacts.append(Contact(fullname, firstname, lastname, type, frequency, lastcontacted, reachout, nickname))
+    print("Added contact: " + fullname + ". Next reachout is " + reachout.strftime("%Y-%m-%d") + ".")
 
     updatecsv(contacts, csvfile)
 
