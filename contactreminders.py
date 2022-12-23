@@ -132,7 +132,8 @@ def addcontact():
 ## Update the lastcontacted date and reachout date for a contact
 
 def updatecontact(firstname, lastname, lastcontacted=datetime.today().date()):
-    lastcontacted = datetime.strptime(lastcontacted, "%Y-%m-%d").date()
+    if type(lastcontacted) == str:
+        lastcontacted = datetime.strptime(lastcontacted, "%Y-%m-%d").date()
 
     if type(firstname) != str or type(lastname) != str:
         print("Invalid name. Please use format firstname lastname")
