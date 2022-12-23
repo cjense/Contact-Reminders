@@ -41,6 +41,8 @@ def main():
         addcontact()
     elif len(sys.argv) > 1 and sys.argv[1] == "shortlist":
         shortlist()
+    elif len(sys.argv) > 1 and sys.argv[1] == "help":
+        help()
     else:
         contactlist()
 
@@ -157,6 +159,15 @@ def shortlist():
     for contact in contacts:
         if datetime.today().date() >= contact.reachout:
             print(contact.fullname + "\n")
+
+def help():
+    print("Usage: contacts.py [command] [arguments]\n")
+    print("Commands:")
+    print("add - add a new contact")
+    print("update - update the last contacted date for a contact")
+    print("shortlist - print a list of contacts to reach out to")
+    print("help - print this help message")
+    print("No arguments - print a list of contacts to reach out to\n")
 
 if __name__ == "__main__":
     main()
